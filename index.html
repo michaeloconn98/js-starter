@@ -1,23 +1,25 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <title>Product App</title>
+    <link rel="stylesheet" type="text/css" href="src/css/index.css">
 </head>
 <body>
-    <h1>The DOM</h1>
 
-    <div>
-        <p>hello, world</p>
-        <p>lorem ipsum</p>
-        <p class="error">this is an error message</p>
+    <div class="nav-bar"></div>
+
+    <div id="app">
+        <div class="cart">
+            <p>Cart({{ cart.length }})</p>
+        </div>
+        <product :premium="premium"
+                 @add-to-cart="updateCart">
+<!--             @remove-from-cart="removeItem"-->
+        </product>
     </div>
 
-    <div class="content">
-        <p>this is the content</p>
-    </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="src/js/sandbox.js"></script>
 </body>
 </html>
